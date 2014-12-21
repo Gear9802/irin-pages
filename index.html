@@ -1,0 +1,152 @@
+<html>
+
+    <head>
+
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/ripples.min.css" rel="stylesheet">
+        <link href="css/material-wfont.min.css" rel="stylesheet">
+        <meta charset="utf-8">
+        <script src="js/holder.js"></script>
+        <style>
+            #fb-root {
+				display: none;
+			}
+			.fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] {
+				width: 100% !important;
+			}
+        </style>
+    </head>
+
+    <body>
+        <!-- Facebook SDK init -->
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=351070565012663&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+        <!-- Your site -->
+        <!-- navbar -->
+        <div class="navbar navbar-default">
+			<div class="navbar-header">
+        		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+            		<span class="icon-bar"></span>
+            		<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="javascript:void(0)">ไอริน</a>
+			</div>
+			<div class="navbar-collapse collapse navbar-responsive-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="https://goo.gl/forms/nqq95wtwjC" target="_blank">สอนศัพท์</a></li>
+					<li><a href="developer.html">สำหรับนักพัฒนา</a></li>
+				</ul>
+			</div>
+		</div>
+        <!-- end of navbar -->
+        <div class="container">
+            <div class="jumbotron">
+                <center><p><img src="holder.js/200x200" class="img-circle"></img></p></center>
+                <center><p>ไอรินคือเด็กน้อยที่เกิดจากโค้ดนับพันบรรทัด เธอจะทำให้ชีวิตของคุณง่ายขึ้น</p></center>
+                <center>
+					<p>
+					<a class="btn btn-default btn-lg" onclick="$('#androiddownload').modal()">ดาวน์โหลด</a>
+					<a class="btn btn-primary btn-lg" href="http://irin.pureapp.in.th">พูดกับไอริน</a>
+					</p>
+				</center>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 col-md-4 col-lg-4">
+                    <div class="panel panel-primary hidden-xs">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">ข่าวสารไอริน</h3>
+                        </div>
+                        <div class="panel-body">
+							<div class="fb-like-box" data-href="https://www.facebook.com/irinbot" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="true" data-show-border="false"></div>
+                        </div>
+                    </div>
+                      <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">ความคืบหน้า</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="list-group">
+								<div class="list-group-item">
+									<div class="row-action-primary">
+										<i class="mdi-social-cake"></i>
+									</div>
+									<div class="row-content">
+										<div class="least-content">20 พย. 57</div>
+										<h4 class="list-group-item-heading">เริ่มต้นเขียนไอริน</h4>
+										<p class="list-group-item-text">เรียกได้ว่าวันนี้คือวันเกิดไอรินเลยนะเนี่ย</p>
+									</div>
+								</div>
+								<div class="list-group-separator"></div>
+							</div>
+                        </div>
+                    </div>
+                        <div class="panel panel-primary hidden-xs">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">ติดต่อกับทีมงานไอริน</h3>
+                        </div>
+                        <div class="panel-body">
+                            หากท่านพบปัญหาในการใช้งาน มีข้อสงสัยประการใด หรือต่อการเชื่อมต่อระบบของท่านเข้ากับไอริน สามารถติดต่อเราได้ที่ <a href="mailto:irin@pureapp.in.th">irin@pureapp.in.th</a>    
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-8 col-md-8 col-lg-8">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">สนทนา</h3>
+                        </div>
+                        <div class="panel-body">
+                            ไอรินรองรับการถามตอบประโยคง่ายๆแล้วคะ
+                        </div>
+                    </div>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">พยากรณ์อากาศ</h3>
+                        </div>
+                        <div class="panel-body">
+                            ไอรินสามารถพยากรณ์อากาศได้โดยการเชื่อมต่อระบบกับ openweathermap โดยสามารถสั่งให้พยากรณ์อากาศได้โดยพิมพ์ว่า "สภาพอากาศ" หรือสามารถบอกอากาศแต่ละที่ด้วยสั่งว่า อากาศที่เชียงใหม่ ซึ่ง openweathermap รองรับถึงการวัดระดับอำเภอ (และบางตำบล) ด้วย
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+		<div id="androiddownload" class="modal">
+    	<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h4 class="modal-title">ขออภัยค่ะ</h4>
+				</div>
+				<div class="modal-body">
+                	<p>ขณะนี้ไอรินยังใช้งานได้เฉพาะบนเว็บเท่านั้นนะคะ</p>
+				</div>
+				<div class="modal-footer">
+                	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+			</div>
+	</div>
+        <!-- Your site ends -->
+
+        <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+        <script src="js/ripples.min.js"></script>
+        <script src="js/material.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $.material.init();
+            });
+        </script>
+
+    </body>
+
+</html>
