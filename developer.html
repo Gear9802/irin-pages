@@ -1,0 +1,90 @@
+<html>
+
+    <head>
+
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/ripples.min.css" rel="stylesheet">
+        <link href="css/material-wfont.min.css" rel="stylesheet">
+        <meta charset="utf-8">
+        <script src="js/holder.js"></script>
+        <style>
+            #fb-root {
+				display: none;
+			}
+			.fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] {
+				width: 100% !important;
+			}
+        </style>
+    </head>
+
+    <body>
+        <!-- Facebook SDK init -->
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=351070565012663&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+        <!-- Your site -->
+        <!-- navbar -->
+        <div class="navbar navbar-default">
+			<div class="navbar-header">
+        		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+            		<span class="icon-bar"></span>
+            		<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="javascript:void(0)">ไอริน</a>
+			</div>
+			<div class="navbar-collapse collapse navbar-responsive-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="https://goo.gl/forms/nqq95wtwjC" target="_blank">สอนศัพท์</a></li>
+					<li><a href="developer.html">สำหรับนักพัฒนา</a></li>
+				</ul>
+			</div>
+		</div>
+        <!-- end of navbar -->
+        <div class="container">
+			 <div class="panel panel-primary hidden-xs">
+             	<div class="panel-heading">
+                   <h3 class="panel-title">รู้จักไอริน</h3>
+                </div>
+                <div class="panel-body">
+					ไอริน พัฒนาจาก Rivescript <a href="http://rivescript.com" target="_blank">(rivscript.com)</a> โดยสามารถพัฒนา ต่อยอดได้ 2 แบบดังนี้
+				</div>
+			</div>
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+                   <h3 class="panel-title">ใช้ไอรินบนเซิฟเวอร์(restful api)</h3>
+                </div>
+                <div class="panel-body">
+					เดี๋ยวมาเขียนต่อ
+				</div>
+			</div>
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+                   <h3 class="panel-title">ใช้ไอรินบนเครื่องผู้ใช้ (webapp)</h3>
+                </div>
+                <div class="panel-body">
+					เดี๋ยวมาเขียนต่อ
+				</div>
+			</div>
+		</div>
+        <!-- Your site ends -->
+
+        <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+        <script src="js/ripples.min.js"></script>
+        <script src="js/material.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $.material.init();
+            });
+        </script>
+
+    </body>
+
+</html>
