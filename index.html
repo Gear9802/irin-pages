@@ -1,198 +1,209 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)	
+-->
 <html>
+	<head>
+		<title>ไอริน ระบบโต้ตอบอัตโนมัติ</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="shortcut icon" href="images/favicon-64.ico">
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.scrolly.min.js"></script>
+		<script src="js/jquery.dropotron.min.js"></script>
+		<script src="js/jquery.scrollex.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body class="landing">
 
-    <head>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/ripples.min.css" rel="stylesheet">
-        <link href="css/material-wfont.min.css" rel="stylesheet">
-        <meta charset="utf-8">
-		<title>ไอริน ผู้ช่วยของคุณ</title>
-        <script src="js/holder.js"></script>
-        <style>
-            #fb-root {
-				display: none;
-			}
-			.fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] {
-				width: 100% !important;
-			}
-        </style>
-    </head>
+		<!-- Header -->
+			<header id="header">
+				<h1 id="logo"><a href="#">ไอริน</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="#">หน้าแรก</a></li>
+						<li>
+							<a href="">เรียนรู้</a>
+							<ul>
+								<li><a href="#" onclick="alert('ส่วนนี้ยังไม่พร้อมใช้งาน');">ใช้ไอรินบนแอปของคุณ</a></li>
+								<li><a href="#" onclick="alert('ส่วนนี้ยังไม่พร้อมใช้งาน');">วิธีการใช้ตัวจัดการบอท</a></li>
+							</ul>
+						</li>
+						<li><a href="https://web.irin.in.th">คุยกับไอริน</a></li>
+						<li><a href="#" class="button special" onclick="alert('ส่วนนี้ยังไม่พร้อมใช้งาน');">สร้างบอท</a></li>
+					</ul>
+				</nav>
+			</header>
 
-    <body>
-        <!-- Facebook SDK init -->
-        <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=351070565012663&version=v2.0";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-        <!-- Your site -->
-        <!-- navbar -->
-        <div class="navbar navbar-default">
-			<div class="navbar-header">
-        		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-            		<span class="icon-bar"></span>
-            		<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="/">ไอริน</a>
-			</div>
-			<div class="navbar-collapse collapse navbar-responsive-collapse">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="https://goo.gl/forms/nqq95wtwjC" target="_blank">สอนศัพท์</a></li>
-					<li><a href="dev">สำหรับนักพัฒนา</a></li>
-				</ul>
-			</div>
-		</div>
-        <!-- end of navbar -->
-        <div class="container">
-            <div class="jumbotron">
-                <center><p><img src="image/irin-thumb-200.png" class="img-circle img-responsive"></img></p></center>
-                <center><p>ไอรินคือเด็กน้อยที่เกิดจากโค้ดนับพันบรรทัด เธอจะทำให้ชีวิตของคุณง่ายขึ้น</p><h7>(กำลังทดสอบเพื่อแก้ไขข้อผิดพลาด)</h7></center>
-                <center>
-					<p>
-					<a class="btn btn-default btn-lg" href="http://goo.gl/forms/WcMIgtXwCZ" target="_blank">แจ้งปัญหา</a>
-					<a class="btn btn-primary btn-lg" href="http://web.irin.in.th">พูดกับไอริน</a>
-					</p>
-				</center>
-            </div>
-            <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                    <div class="panel panel-primary hidden-xs">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">ข่าวสารไอริน</h3>
-                        </div>
-                        <div class="panel-body">
-							<div class="fb-like-box" data-href="https://www.facebook.com/irinbot" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="true" data-show-border="false"></div>
-                        </div>
-                    </div>
-                      <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">ความคืบหน้า</h3>
-                        </div>
-                        <div class="panel-body">
-                            <div class="list-group">
-								<div class="list-group-item">
-									<div class="row-action-primary">
-										<i class="mdi-social-public"></i>
-									</div>
-									<div class="row-content">
-										<h4 class="list-group-item-heading">เปิดเว็บ ไอริน</h4>
-										<p class="list-group-item-text">25 ธค. 57 วันนี้คือวันเปิดเว็บไอริน และเริ่มทดสอบระบบ</p>
-									</div>
-								</div>
-								<div class="list-group-separator"></div>
-								<div class="list-group-item">
-									<div class="row-action-primary">
-										<i class="mdi-action-wallet-giftcard"></i>
-									</div>
-									<div class="row-content">
-										<h4 class="list-group-item-heading">เริ่มต้นเขียนไอริน</h4>
-										<p class="list-group-item-text">20 พย. 57 เรียกได้ว่าวันนี้คือวันเกิดไอรินเลยนะเนี่ย</p>
-									</div>
-								</div>
-								<div class="list-group-separator"></div>
+		<!-- Banner -->
+			<section id="banner">
+				<div class="content">
+					<header>
+						<h2>ไอริน ระบบตอบโต้อัตโนมัติ</h2>
+						<p>พัฒนาขึ้นจากโค้ดนับพันบรรทัดสู่การโต้ตอบอัจฉริยะ<br />
+							สามารถประยุกต์ให้เข้ากับงานของคุณได้อย่างง่ายดาย</p>
+					</header>
+					<span class="image"><img src="images/irin-thumb-512-white.png" alt="" /></span>
+				</div>
+				<a href="#one" class="goto-next scrolly">Next</a>
+			</section>
+
+		<!-- One -->
+			<section id="one" class="spotlight style1 bottom">
+				<span class="image fit main"><img src="images/pic02.jpg" alt="" /></span>
+				<div class="content">
+					<div class="container">
+						<div class="row">
+							<div class="4u 12u$(medium)">
+								<header>
+									<h2>ประยุกต์ใช้งานได้หลากหลาย</h2>
+									<p>ไอรินถูกพัฒนาขึ้นมาเพื่อถามตอบคำถามกับมนุษย์โดยถูกปรับแต่งเป็นพิเศษเพื่อให้ใช้งานกับภาษาไทยได้</p>
+								</header>
 							</div>
-                        </div>
-                    </div>
-                        <div class="panel panel-primary hidden-xs">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">ติดต่อกับทีมงานไอริน</h3>
-                        </div>
-                        <div class="panel-body">
-                            หากท่านพบปัญหาในการใช้งาน มีข้อสงสัยประการใด หรือต่อการเชื่อมต่อระบบของท่านเข้ากับไอริน สามารถติดต่อเราได้ที่ <a href="mailto:dev@irin.in.th">dev@irin.in.th</a>    
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-8 col-md-8 col-lg-8">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">บริจาคเงินช่วยเหลือค่าใช้จ่าย</h3>
-                        </div>
-                        <div class="panel-body">
-							ท่านสามารถส่งเสริมนักพัฒนาให้พัฒนาไอรินต่อไปอย่างไม่หยุดยั้งด้วยการช่วยเหลือค่าใช้จ่ายในการพัฒนาซึ่งขณะนี้ไอรินมีค่าใช้จ่ายต่างๆดังนี้ <br>
-							ค่าโดเมน ปีละ 400 บาท <br>
-							ค่าแรกเข้า Playstore 25$ (ประมาณ 900 บาท)<br>
-							กดปุ่มเพื่อบริจาค 50 บาท ผ่าน Paypal หรือ truemoney
-							<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
-">
-<input type="submit" class="btn btn-primary" border="0" name="submit" alt="PayPal คือ วิธีชำระเงินออนไลน์ที่ปลอดภัยและง่ายยิ่งขึ้น!" value="paypal"><a href="http://www.tmtopup.com/topup/?uid=104300" class="btn btn-primary" target="_blank">TRUE MONEY</a>
-</form>
-
-
-							
-                        </div>
-                    </div>
-					<div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">พัฒนาต่อยอดไอริน</h3>
-                        </div>
-                        <div class="panel-body">
-							หากท่านสนใจนำไอรินไปทำต่อ สามารถอ่านรายละเอียดเพิ่มเติมได้ <a href="developer.html">ที่นี่</a>
-                        </div>
-                    </div>
-					<div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">สนทนา</h3>
-                        </div>
-                        <div class="panel-body">
-							ไอรินรองรับการถามตอบประโยคง่ายๆแล้วคะ
-                        </div>
-                    </div>
-					<div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">แปลภาษา</h3>
-                        </div>
-                        <div class="panel-body">
-							ไอรินสามารถแปลภาษาใดๆก็ได้กลับเป็นภาษาไทยโดยการพิมพ์ประโยคที่อยากรู้ ตามด้วยคำว่าแปลว่า (เช่น i love cat แปลว่า ระบบจะตอบกลับมาว่า แปลว่าฉันรักแมวค่ะ) โดยระบบแปลภาษาใช้ bing translator ในการแปลคำศัพท์
-                        </div>
-                    </div>
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">พยากรณ์อากาศ</h3>
-                        </div>
-                        <div class="panel-body">
-                            ไอรินสามารถพยากรณ์อากาศได้โดยการเชื่อมต่อระบบกับ openweathermap โดยสามารถสั่งให้พยากรณ์อากาศได้โดยพิมพ์ว่า "สภาพอากาศ" หรือสามารถบอกอากาศแต่ละที่ด้วยสั่งว่า อากาศที่เชียงใหม่ ซึ่ง openweathermap รองรับถึงการวัดระดับอำเภอ (และบางตำบล) ด้วย
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal -->
-		<div id="androiddownload" class="modal">
-    	<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-					<h4 class="modal-title">ขออภัยค่ะ</h4>
+							<div class="4u 12u$(medium)">
+								<p>คุณสามารถพบไอรินได้ในทุกที่ไม่ว่าจะเป็นอุปกรณ์โทรศพท์มือถือ ตู้เย็น
+									หรือแม้กระทั่งหม้อหุงข้าว เพื่อตอบสนองกับผู้ใช้งาน ได้ทันที โดยไม่ต้องรอเจ้าหน้าที่ตอบ
+									ช่วยทำให้ผู้ใช้มีประสบการณ์ที่ดีขึ้นในการใช้งานไม่ต้องรอคอยเจ้าหน้าที่เป็นเวลานาน
+									ซึ่งทางโปรแกรมเมอร์สามารถเขียนคำสั่งเพื่อตรวจสอบถ้อยคำที่ไอรินตอบ
+									จึงสามารถให้ระบบของคุณทำงานตามการตอบของไอรินได้ 
+								   </p>
+							</div>
+							<div class="4u$ 12u$(medium)">
+								<p>และไอรินยังเปิดกว้างสำหรับโปรแกรมเมอร์ โดยสามารถดาวน์โหลด
+								ซอร์สโค้ดบางส่วนของไอรินไปพัฒนาต่อได้ทันที พร้อมทั้งทางเว็บไอรินเองมีบริการ Rest API
+								และคุณสามารถสร้างบอทเองได้ด้วยตัวเองผ่านทางเว็บไอริน ทำให้ไอรินสามารถเข้าไปอยู่ได้ทกุกอุปกรณ์ เนื่องจากความง่ายในการพัฒนา</p>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="modal-body">
-                	<p>ขณะนี้ไอรินยังใช้งานได้เฉพาะบนเว็บเท่านั้นนะคะ</p>
+				<a href="#two" class="goto-next scrolly">Next</a>
+			</section>
+
+		<!-- Two -->
+			<section id="two" class="spotlight style2 right">
+				<span class="image fit main"><img src="images/pic03.jpg" alt="" /></span>
+				<div class="content">
+					<header>
+						<h2>สร้างบอทใช้เองไม่ใช่เรื่องยาก</h2>
+						<p>ด้วยการใช้ตัวจัดการบอทของไอรินคุณสามารถทำมันได้โดยไม่จำเป็นต้องเขียนโปรแกรม</p>
+					</header>
+					<p>เราได้สร้างตัวจัดการบอทขึ้นมาให้ใช้งานง่าย คุณไม่จำเป็นต้องสัมผัสโค้ดเพื่อสร้างบอทของคุณเลยแม้สักนิดเดียว ช่วยให้คุณสามารถสร้างบอทของคุณได้อย่างรวดเร็ว นอกจากนี้ยังง่ายต่อการควบคุมและแบ่งปันไปให้ผู้อื่นใช้งานด้วย</p>
+					<ul class="actions">
+						<li><a href="#" class="button" onclick="alert('ส่วนนี้ยังไม่พร้อมใช้งาน');">เรียนรู้เพิ่มเติม</a></li>
+					</ul>
 				</div>
-				<div class="modal-footer">
-                	<button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
-					<a href="http://web.irin.pureapp.in.th" class="btn btn-primary">คุยกับไอรินบนเว็บ</a>
+				<a href="#three" class="goto-next scrolly">Next</a>
+			</section>
+
+		<!-- Three -->
+			<section id="three" class="spotlight style3 left">
+				<span class="image fit main bottom"><img src="images/pic04.jpg" alt="" /></span>
+				<div class="content">
+					<header>
+						<h2>เปิดกว้างเสมอสำหรับโปรแกรมเมอร์</h2>
+						<p>สามารถนำไอรินไปติดตั้งบนเซิร์ฟเวอร์หรืออุปกรณ์ของตนเองได้อย่างง่ายดาย</p>
+					</header>
+					<p>ไอรินถูกสร้างขึ้นด้วย Rivescript ซึ่งมี Interpeter เป็น Javascript ทำให้สามารถใช้ได้บน Node.JS และ Webbrowser ซึ่งทำให้สามารถใช้งานได้บนเกือบทุกอุปกรณ์ จึงไม่ใช่เรื่องยากที่จะใช้ไอรินบนอุปกรณ์ของคุณ และไอรินยังมีบริการ Rest API บนเว็บของไอรินเอง ทำให้โปรแกรมเมอร์ไม่จำเป็นต้องมีความรู้ด้านการใช้ Javascript ก็สามารถดึงข้อมูลของไอริน ผ่านที่นี่เพื่อนำไอรินไปใช้ยังแพลตฟอร์มอื่น</p>
+					<ul class="actions">
+						<li><a href="#" class="button" onclick="alert('ส่วนนี้ยังไม่พร้อมใช้งาน');">เรียนรู้เพิ่มเติม</a></li>
+					</ul>
 				</div>
-			</div>
-			</div>
-	</div>
-        <!-- Your site ends -->
+				<a href="#four" class="goto-next scrolly">Next</a>
+			</section>
 
-        <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<!-- Four -->
+			<section id="four" class="wrapper style1 special fade-up">
+				<div class="container">
+					<header class="major">
+						<h2>และทั้งหมดนี่คือไอริน</h2>
+						<p>จากทั้งหมดที่กล่าวมาสามารถสรุปเป็นความสามารถของไอรินได้ดังนี้</p>
+					</header>
+					<div class="box alt">
+						<div class="row uniform">
+							<section class="4u 6u(medium) 12u$(xsmall)">
+								<span class="icon alt major fa-flask"></span>
+								<h3>ใช้งานง่าย</h3>
+								<p>ไม่จำเป็นต้องเขียนโปรแกรมได้  เพียงแค่ใช้ตัวจัดการบอทของไอรินก็ทำให้คุณก็รู้สึกสนุกกับการสร้างบอทของตนเองได้แล้ว </p>
+							</section>
+							<section class="4u 6u$(medium) 12u$(xsmall)">
+								<span class="icon alt major fa-comments"></span>
+								<h3>รองรับภาษาไทยและอังกฤษ</h3>
+								<p>ตัวจัดการบอทของไอรินรองรับทั้งภาษาไทยและภาษาอังกฤษ คุณจึงสามารถสอนบอทให้ตอบทั้งภาษาไทยและภาษาอังกฤษได้</p>
+							</section>
+							<section class="4u$ 6u(medium) 12u$(xsmall)">
+								<span class="icon alt major fa-users"></span>
+								<h3>ง่ายต่อการแบ่งปัน</h3>
+								<p>เมื่อคุณสร้างบอทของตัวเองเสร็จ คุณสามารถส่งลิงก์ บอทของคุณให้เพื่อนของคุณสามารถเข้ามาสนทนาโต้ตอบกับบอทของคุณได้</p>
+							</section>
+							<section class="4u 6u$(medium) 12u$(xsmall)">
+								<span class="icon alt major fa-paper-plane"></span>
+								<h3>ใช้งานได้ทุกที่</h3>
+								<p>บอทที่สร้างขึ้น สามารถใช้งานได้ทุกที่ ด้วยการติดตั้ง Rivescript Interpeter หรือใช้ Rest API ในการประมวลผล</p>
+							</section>
+							<section class="4u 6u(medium) 12u$(xsmall)">
+								<span class="icon alt major fa-heart-o"></span>
+								<h3>ทำตามที่คุณสั่ง</h3>
+								<p>บอทจะเรียนรู้จากที่คุณสอนและจะเป็นในแบบที่คุณต้องการให้เป็น ตอบโจทย์ความต้องการใช้งานบอทของคุณ</p>
+							</section>
+							<section class="4u$ 6u$(medium) 12u$(xsmall)">
+								<span class="icon alt major fa-btc"></span>
+								<h3>ใช้งานได้ฟรี</h3>
+								<p>ไอรินเปิดให้ขั้นฐานได้ฟรี เราขอเพียงคุณบริจาคเงินเล็กน้อยเท่านั้น เพื่อใช้ในการบริหารค่าใช้จ่ายต่างๆของเซิฟเวอร์</p>
+							</section>
+						</div>
+					</div>
+					<footer class="major">
+						<ul class="actions">
+							<li><a href="#" class="button" onclick="alert('ส่วนนี้ยังไม่พร้อมใช้งาน');">บริจาคเงินให้ไอริน</a></li>
+						</ul>
+					</footer>
+				</div>
+			</section>
 
-        <script src="js/ripples.min.js"></script>
-        <script src="js/material.min.js"></script>
-        <script>
-            $(document).ready(function() {
-                $.material.init();
-            });
-        </script>
+		<!-- Five -->
+			<section id="five" class="wrapper style2 special fade">
+				<div class="container">
+					<header>
+						<h2>ไอรินถูกใจคุณไหม?</h2>
+						<p>ถ้าใช่ คุณจะรอช้าอยู่ทำไม เริ่มใช้ไอรินตอนนี้เลยสิ</p>
+					</header>
+					<form method="post" action="#" class="container 50%">
+						<div class="row uniform 50%">
+							<!-- <div class="8u 12u$(xsmall)"><input type="email" name="email" id="email" placeholder="Your Email Address" /></div> -->
+							<div class="2u 12u$(xsmall)"></div>
+							<div class="4u 12u$(xsmall)"><a href="https://web.irin.in.th" class="button fit" />คุยกับไอริน</a></div>
+							<div class="4u 12u$(xsmall)"><a href="#" onclick="alert('ส่วนนี้ยังไม่พร้อมใช้งาน');" class="button special fit" />สร้างบอท</a></div>
+						</div>
+					</form>
+				</div>
+			</section>
 
-    </body>
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="https://www.facebook.com/irinbot" target="_blank" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+					<li><a href="https://github.com/pureexe" target="_blank" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+					<li><a href="mailto:dev@irin.in.th" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; ไอริน. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					<li>Created : <a href="http://www.pureapp.in.th">Pure's app</a></li>
+				</ul>
+			</footer>
 
+	</body>
 </html>
