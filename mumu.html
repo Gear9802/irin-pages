@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>มูมู่  แมวน้อยของไอริน</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.scrolly.min.js"></script>
+		<script src="js/jquery.dropotron.min.js"></script>
+		<script src="js/jquery.scrollex.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<script>
+			window.fbAsyncInit = function() {
+				FB.init({
+					appId      : '644049662391131',
+					xfbml      : true,
+					version    : 'v2.2'
+				});
+				var fb_login = function(){
+					FB.login(function(){
+						FB.getLoginStatus(function(response) {
+							if (response.status === 'connected') {
+								console.log('Logged in.');
+							}
+						});
+					}, {scope: ''});
+				}
+				FB.getLoginStatus(function(response) {
+					if (response.status === 'connected') {
+						console.log('Logged in.');
+					}
+				});
+			(function(d, s, id){
+			};
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) {return;}
+				js = d.createElement(s); js.id = id;
+				js.src = "//connect.facebook.net/th_TH/sdk.js";
+				fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		</script>
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<h1 id="logo"><a href="#">ไอริน</a></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="#">หน้าแรก</a></li>
+						<li>
+							<a href="">เรียนรู้</a>
+							<ul>
+								<li><a href="#" onclick="alert('ส่วนนี้ยังไม่พร้อมใช้งาน');">ใช้ไอรินบนแอปของคุณ</a></li>
+								<li><a href="#" onclick="alert('ส่วนนี้ยังไม่พร้อมใช้งาน');">วิธีการใช้ตัวจัดการบอท</a></li>
+								<li><a href="rivescript">วิธีการใช้ Rivescript</a></li>
+							</ul>
+						</li>
+						<li><a href="https://web.irin.in.th">คุยกับไอริน</a></li>
+						<li><a href="service" class="button special">สร้างบอท</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Main -->
+			<div id="main" class="wrapper style1">
+				<div class="container">
+					<header class="major">
+						<h2>มูมู่ แมวน้อยของไอริน</h2>
+						<p>สร้างขึ้นมาเพื่อพัฒนาฐานข้อมูลของไอรินได้เร็วขึ้น</p>
+					</header>
+
+					<!-- Content -->
+						<section id="content">
+							<center><a href="javascript:fb_login();" class="button special">เริ่มต้นสอนมูมู่</a></center>
+						</section>
+
+				</div>
+			</div>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="https://www.facebook.com/irinbot" target="_blank" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="https://github.com/pureexe" target="_blank" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="mailto:dev@irin.in.th" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; ไอริน. All rights reserved.</li>
+						<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						<li>Created : <a href="http://www.pureapp.in.th">Pure's app</a></li>
+					</ul>
+				</footer>
+
+	</body>
+</html>
