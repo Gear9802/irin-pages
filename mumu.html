@@ -66,6 +66,8 @@
             var addword = function(){
                 $.post("https://mumu.irin.in.th/teach",{input:$("#txt_input").val(),reply:$("#txt_reply").val(),access_token:sessionStorage.token},function(){
                     $('#addwordcomplete').stop().fadeIn(400).delay(3000).fadeOut(400);
+                }).fail(function(e){
+                    alert("AJAX FAIL : "+e);
                 });
             }
 		</script>
