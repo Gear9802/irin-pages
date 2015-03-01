@@ -64,7 +64,9 @@
 				}, {scope: ''});
 			}
             var addword = function(){
-                 $('#addwordcomplete').stop().fadeIn(400).delay(3000).fadeOut(400);
+                $.post("https://mumu.irin.in.th/teach",{input:$("#txt_input").val(),reply:$("#txt_reply").val(),access_token=sessionStorage.token},function(){
+                    $('#addwordcomplete').stop().fadeIn(400).delay(3000).fadeOut(400);
+                });
             }
 		</script>
         <style>
@@ -129,10 +131,10 @@
                                 <center>
                                     <h3>สอนศัพท์ใหม่</h3>
                                     <div class="6u 9u(medium) 12(small) 12u(xsmall)">
-                                        <input type="text" name="txt_input" id="name" value="" placeholder="คำศัพท์">
+                                        <input type="text" name="txt_input" id="txt_input" value="" placeholder="คำศัพท์">
                                     </div>
                                     <div class="6u 9u(medium) 12(small) 12u(xsmall)">
-                                        <input type="text" name="txt_input" id="name" value="" placeholder="ให้ตอบว่า">
+                                        <input type="text" name="txt_reply" id="txt_reply" value="" placeholder="ให้ตอบว่า">
                                     </div>
                                     <div class="3u 3u(medium) 4u(small) 12u(xsmall)" style="margin-top:20px;">
                                         <a href="javascript:addword();" class="button special fit">เพิ่มศัพท์ใหม่</a>
