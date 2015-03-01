@@ -32,18 +32,9 @@
 					xfbml      : true,
 					version    : 'v2.2'
 				});
-				var fb_login = function(){
-					FB.login(function(){
-						FB.getLoginStatus(function(response) {
-							if (response.status === 'connected') {
-								console.log('Logged in.');
-							}
-						});
-					}, {scope: ''});
-				}
 				FB.getLoginStatus(function(response) {
 					if (response.status === 'connected') {
-						console.log('Logged in.');
+						console.log(response);
 					}
 				});
 			};
@@ -54,6 +45,15 @@
 				js.src = "//connect.facebook.net/th_TH/sdk.js";
 				fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'facebook-jssdk'));
+			var fb_login = function(){
+				FB.login(function(){
+					FB.getLoginStatus(function(response) {
+						if (response.status === 'connected') {
+							console.log('Logged in.');
+						}
+					});
+				}, {scope: ''});
+			}
 		</script>
 	</head>
 	<body>
