@@ -36,8 +36,8 @@
 				FB.getLoginStatus(function(response) {
 					if (response.status === 'connected') {
                         $(function() {
-                            $("login-display").hide();
-                            $("content-display").show();
+                            $("#login-display").hide();
+                            $("#content-display").show();
                         });
 					}
 				});
@@ -54,8 +54,8 @@
 					FB.getLoginStatus(function(response) {
 						if (response.status === 'connected') {
 							$(function() {
-                                $("login-display").hide();
-                                $("content-display").show();
+                                $("#login-display").hide();
+                                $("#content-display").show();
                             });
 						}
 					});
@@ -102,7 +102,6 @@
                             </center>
 						</section>
                         <section id="content-display" style="display:none;">
-                            <center>
                                 <h3>สอนศัพท์ใหม่</h3>
                                 <div class="5u 12u(xsmall)">
                                     <input type="text" name="txt_input" id="name" value="" placeholder="คำศัพท์">
@@ -113,8 +112,7 @@
                                 <div class="2u 12u(xsmall)">
                                     <a href="javascript:addword();" class="button special fit">เพิ่มศัพท์ใหม่</a>
                                 </div>
-                            </center>
-						</section>
+                        </section>
 
 				</div>
 			</div>
