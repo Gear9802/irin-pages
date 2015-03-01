@@ -39,7 +39,7 @@
                             $("#login-display").hide();
                             $("#content-display").show();
                         });
-                        console.log(response);
+                        sessionStorage.token = response.authResponse.accessToken;
 					}
 				});
 			};
@@ -58,6 +58,7 @@
                                 $("#login-display").hide();
                                 $("#content-display").show();
                             });
+                            sessionStorage.token = response.authResponse.accessToken;
 						}
 					});
 				}, {scope: ''});
