@@ -71,6 +71,9 @@
                 $.get("https://mumu.irin.in.th/history?access_token="+sessionStorage.token+"&limit="+(((history_page-1)*10)+history_shift)+",10",function(r){
                     if(r.length==0){
                         $("#history-loadmore").remove();
+                        if(history_page==1){
+                            $("#history-spinner").append("<tr class='history-nothing'><td colspan='3'>คุณยังไม่ได้สอนศัพท์เลย ช่วยสอนเพิ่มด้วย</td></tr>");        
+                        }
                     }
                     r.forEach(function(q){
                         var add_date = new Date(q.ADD_DATE);
