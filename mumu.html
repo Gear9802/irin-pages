@@ -94,6 +94,13 @@
                 box-shadow: 0px 0px 10px -1px rgba(56, 56, 56, 1);
                 z-index: 1000;
             }
+            #spinner{
+                -moz-animation: spinner-show 1.5s 1 0.25s ease forwards, spinner-rotate 0.75s infinite linear !important;
+                -webkit-animation: spinner-show 1.5s 1 0.25s ease forwards, spinner-rotate 0.75s infinite linear !important;
+                -o-animation: spinner-show 1.5s 1 0.25s ease forwards, spinner-rotate 0.75s infinite linear !important;
+                -ms-animation: spinner-show 1.5s 1 0.25s ease forwards, spinner-rotate 0.75s infinite linear !important;
+                animation: spinner-show 1.5s 1 0.25s ease forwards, spinner-rotate 0.75s infinite linear !important;
+			 }
         </style>
 	</head>
 	<body>
@@ -134,20 +141,45 @@
                                 <div>
                             </center>
 						</section>
-                        <section id="content-display" style="display:none;">
-                                <center>
-                                    <h3>สอนศัพท์ใหม่</h3>
-                                    <div class="6u 9u(medium) 12(small) 12u(xsmall)">
-                                        <input type="text" name="txt_input" id="txt_input" value="" placeholder="คำศัพท์">
-                                    </div>
-                                    <div class="6u 9u(medium) 12(small) 12u(xsmall)">
-                                        <input type="text" name="txt_reply" id="txt_reply" value="" placeholder="ให้ตอบว่า">
-                                    </div>
-                                    <div class="3u 3u(medium) 4u(small) 12u(xsmall)" style="margin-top:20px;">
-                                        <a href="javascript:addword();" class="button special fit">เพิ่มศัพท์ใหม่</a>
-                                    </div>
-                            </center>
-                        </section>
+                        <div id="content-display" style="display:none;">
+                            <section>
+                                    <center>
+                                        <h3>สอนศัพท์ใหม่</h3>
+                                        <div class="6u 9u(medium) 12(small) 12u(xsmall)">
+                                            <input type="text" name="txt_input" id="txt_input" value="" placeholder="คำศัพท์">
+                                        </div>
+                                        <div class="6u 9u(medium) 12(small) 12u(xsmall)">
+                                            <input type="text" name="txt_reply" id="txt_reply" value="" placeholder="ให้ตอบว่า">
+                                        </div>
+                                        <div class="3u 3u(medium) 4u(small) 12u(xsmall)" style="margin-top:20px;">
+                                            <a href="javascript:addword();" class="button special fit">เพิ่มศัพท์ใหม่</a>
+                                        </div>
+                                </center>
+                            </section>
+                            <section>
+                                    <center>
+                                        <h3>ประโยคที่สอนโดยฉัน</h3>    
+                                    </center>
+                                    <table class="alt">
+									<thead>
+										<tr>
+											<th>คำศัพท์</th>
+											<th>ตอบว่า</th>
+											<th>สอนเมื่อ</th>
+										</tr>
+									</thead>
+									<tbody id="history-display">
+                                        <div id="spinner"></div>
+									</tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="2"></td>
+                                            <td style="text-align:right;"><a>เพิ่มเติม...</a></td>
+                                        </tr>
+                                    </tfoot>									
+								</table>
+                            </section>
+                        </div>
 
 				</div>
 			</div>
