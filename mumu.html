@@ -69,7 +69,7 @@
             var loadHistory = function(){
                 history_page++;
                 $.get("https://mumu.irin.in.th/history?access_token="+sessionStorage.token+"&limit="+(((history_page-1)*10)+history_shift)+","+(((history_page)*10)+history_shift),function(r){
-                    console.log("https://mumu.irin.in.th/history?access_token="+sessionStorage.token+"&limit="+(((history_page-1)*10)+history_shift)+","+(((history_page)*10)+history_shift);
+                    console.log("https://mumu.irin.in.th/history?access_token="+sessionStorage.token+"&limit="+(((history_page-1)*10)+history_shift)+","+(((history_page)*10)+history_shift));
                     r.forEach(function(q){
                         var add_date = new Date(q.ADD_DATE);
                         console.log(q.ADD_DATE);
