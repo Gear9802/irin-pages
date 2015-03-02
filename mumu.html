@@ -73,6 +73,7 @@
                     r.forEach(function(q){
                         $("#history-display").append("<tr><td>"+q.INPUT+"</td><td>"+q.REPLY+"</td><td>"+add_date.getDate()+"/"+add_date.getMonth()+"/"+(add_date.getFullYear()+543)+" "+add_date.getHours()+":"+add_date.getMinutes()+"</td></tr>");
                     });
+                    $("#history-spinner").remove();
                 });
             }
             var addword = function(){
@@ -175,7 +176,7 @@
 										</tr>
 									</thead>
 									<tbody id="history-display">
-                                        <tr><td colspan="3"><center><i class="fa fa-circle-o-notch fa-spin"></i></center></td></tr>
+                                        <tr id="history-spinner"><td colspan="3"><center><i class="fa fa-circle-o-notch fa-spin"></i></center></td></tr>
 									</tbody>
                                     <tfoot>
                                         <tr>
