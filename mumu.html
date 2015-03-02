@@ -64,10 +64,14 @@
 				}, {scope: ''});
 			}
             var addword = function(){
-                $.post("https://mumu.irin.in.th/teach",{input:$("#txt_input").val(),reply:$("#txt_reply").val(),access_token:sessionStorage.token},function(){
+                var cin = $("#txt_input").val();
+                var cout = $("#txt_reply").val();
+                $("#txt_input").val("");
+                $("#txt_reply").val("");
+                $.post("https://mumu.irin.in.th/teach",{input:cin,reply:cout,access_token:sessionStorage.token},function(){
                     $('#addwordcomplete').stop().fadeIn(400).delay(3000).fadeOut(400);
                 }).fail(function(e){
-                    alert("Server Error");
+                    alert("เซิฟเวอร์ขัดข้อง แจ้งเราทราบทางแฟนเพจ pure's app");
                     console.log(e);
                 });
             }
