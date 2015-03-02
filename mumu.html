@@ -70,7 +70,7 @@
                 history_page++;
                 $.get("https://mumu.irin.in.th/history?access_token="+sessionStorage.token+"&limit="+(((history_page-1)*10)+history_shift)+",10",function(r){
                     if(r.length==0){
-                        $("#history_loadmore").remove();
+                        $("#history-loadmore").remove();
                     }
                     r.forEach(function(q){
                         var add_date = new Date(q.ADD_DATE);
