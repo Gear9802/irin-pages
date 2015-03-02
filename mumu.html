@@ -71,7 +71,7 @@
                 $.get("https://mumu.irin.in.th/history?access_token="+sessionStorage.token+"&limit="+(((history_page-1)*10)+history_shift)+","+(((history_page)*10)+history_shift),function(r){
                     var add_date = new Date(r.ADD_DATE);
                     r.forEach(function(q){
-                        $("#history-display").append("<tr><td>"+q.INPUT+"</td><td>"+q.REPLY+"</td><td>"+add_date.getDate()"/"+add_date.getMonth()+"/"+(add_date.getFullYear()+543)+" "+add_date.getHours()+":"+add_date.getMinutes()+"</td></tr>");
+                        $("#history-display").append("<tr><td>"+q.INPUT+"</td><td>"+q.REPLY+"</td><td>"+add_date.getDate()+"/"+add_date.getMonth()+"/"+(add_date.getFullYear()+543)+" "+add_date.getHours()+":"+add_date.getMinutes()+"</td></tr>");
                     });
                 });
             }
