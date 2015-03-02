@@ -72,10 +72,13 @@
                     r.forEach(function(q){
                         var add_date = new Date(q.ADD_DATE);
                         console.log(q.ADD_DATE);
-                        $("#history-display").append("<tr><td>"+q.INPUT+"</td><td>"+q.REPLY+"</td><td>"+add_date.getDate()+"/"+add_date.getMonth()+"/"+(add_date.getFullYear()+543)+" "+add_date.getHours()+":"+add_date.getMinutes()+"</td></tr>");
+                        $("#history-display").append("<tr><td>"+q.INPUT+"</td><td>"+q.REPLY+"</td><td>"+zerogap(add_date.getDate())+"/"+zerogap(add_date.getMonth())+"/"+(add_date.getFullYear()+543)+" "+zerogap(add_date.getHours())+":"+zerogap(add_date.getMinutes())+"</td></tr>");
                     });
                     $("#history-spinner").remove();
                 });
+            }
+            var zerogap = function(v){
+                return (v<10)?"0"+v:v;
             }
             var addword = function(){
                 var cin = $("#txt_input").val();
