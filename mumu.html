@@ -79,7 +79,7 @@
                 });
             }
             var clickloadHistory = function(){
-                $("#history-display").append("<td colspan=\"3\" style=\"text-align:right;\"><a href=\"javascript:clickloadHistory();\">เพิ่มเติม...</a></td>");
+                $("#history-display").append("<tr id=\"history-spinner\"><td colspan=\"3\"><center><i class=\"fa fa-circle-o-notch fa-spin\"></i></center></td></tr>");
                 loadHistory();
             }
             var zerogap = function(v){
