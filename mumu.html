@@ -40,6 +40,7 @@
                             $("#content-display").show();
                         });
                         sessionStorage.token = response.authResponse.accessToken;
+                        loadHistory();
 					}
 				});
 			};
@@ -63,6 +64,14 @@
 					});
 				}, {scope: ''});
 			}
+            var history_shift = 0;
+            var history_page = 0;
+            var loadHistory = function(){
+                history_page++;
+                $.get("https://mumu.irin.in.th/history?access_token="+sessionStorage.token+"&limit="+(((history_page-1)*10)+history_shift)+","+(((history_page)*10)+history_shift),function(r){
+                    console.log(r);
+                });
+            }
             var addword = function(){
                 var cin = $("#txt_input").val();
                 var cout = $("#txt_reply").val();
