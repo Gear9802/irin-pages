@@ -69,7 +69,9 @@
             var loadHistory = function(){
                 history_page++;
                 $.get("https://mumu.irin.in.th/history?access_token="+sessionStorage.token+"&limit="+(((history_page-1)*10)+history_shift)+",10",function(r){
-                    console.log("https://mumu.irin.in.th/history?access_token="+sessionStorage.token+"&limit="+(((history_page-1)*10)+history_shift)+","+(((history_page)*10)+history_shift));
+                    if(r.length==0){
+                        $("#history_loadmore").remove();
+                    }
                     r.forEach(function(q){
                         var add_date = new Date(q.ADD_DATE);
                         console.log(q.ADD_DATE);
@@ -191,7 +193,7 @@
                                         <tr id="history-spinner"><td colspan="3"><center><i class="fa fa-circle-o-notch fa-spin"></i></center></td></tr>
 									</tbody>
                                     <tfoot>
-                                        <tr>
+                                        <tr id="history-loadmore">
                                             <td colspan="3" style="text-align:right;"><a href="javascript:clickloadHistory();">เพิ่มเติม...</a></td>
                                         </tr>
                                     </tfoot>									
