@@ -97,9 +97,13 @@
                 $("#txt_reply").val("");
                 $.post("https://mumu.irin.in.th/teach",{input:cin,reply:cout,access_token:sessionStorage.token},function(){
                     var add_date = new Date(); 
+                    if($("#history-nothing").length){
+                        $("#history-nothing").remove();
+                    }
                     $("#history-display").prepend("<tr><td>"+cin+"</td><td>"+cout+"</td><td>"+zerogap(add_date.getDate())+"/"+zerogap(add_date.getMonth())+"/"+(add_date.getFullYear()+543)+" "+zerogap(add_date.getHours())+":"+zerogap(add_date.getMinutes())+"</td></tr>");
                     history_shift++;
                     $('#addwordcomplete').stop().fadeIn(400).delay(3000).fadeOut(400);
+
                 }).fail(function(e){
                     alert("เซิฟเวอร์ขัดข้อง แจ้งเราทราบทางแฟนเพจ pure's app");
                     console.log(e);
