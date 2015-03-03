@@ -90,8 +90,9 @@
                 loadHistory();
             }
             var isUnknownloaded = false;
+            var unknwon_id_roll = 0;
             var loadUnknown = function(){
-                $.get("https://mumu.irin.in.th/unknown",function(r){
+                $.get("https://mumu.irin.in.th/unknown?limit=12",function(r){
                     $("#unknown-loadmore").remove();
                     console.log(r.length);
                     if(isUnknownloaded==false){
@@ -100,10 +101,23 @@
                         r.pop();
                     }
                     r.forEach(function(q){
-                        $("#unknown-display").append("<div id=\"INPUT_"+q.INPUT+"\" class=\"2u 3u(medium) 4u(small) 6u(xsmall)\"><a href=\"\" style=\"color:white;\">"+q.INPUT+"</a></div>");
+                        $("#unknown-display").append("<div id=\"UNKNOWN_"+(unknwon_id_roll)+"\" class=\"2u 3u(medium) 4u(small) 6u(xsmall)\"><a href=\"javascript:objUnknown(\""+q.INPUT+"\","+(unknwon_id_roll)+");\" style=\"color:white;\">"+q.INPUT+"</a></div>");
+                        unknwon_id_roll++;
                     });
                     $("#unknown-display").append("<div id=\"unknown-loadmore\" class=\"2u 3u(medium) 4u(small) 6u(xsmall)\"><a href=\"javascript:clickloadUnknown();\">เพิ่มเติม...</a></div>");
                 });
+            }
+            var clickUnknown = function(msg,id){
+
+                $.get("https://mumu.irin.in.th/unknown?limit=12",function(r){
+                    $("#UNKNOWN_"+id).remove();
+                    $("#unknown-loadmore").remove();
+                    r.forEach(function(q){
+                        $("#unknown-display").append("<div id=\"UNKNOWN_"+(unknwon_id_roll)+"\" class=\"2u 3u(medium) 4u(small) 6u(xsmall)\"><a href=\"javascript:objUnknown(\""+q.INPUT+"\","+(unknwon_id_roll)+");\" style=\"color:white;\">"+q.INPUT+"</a></div>");
+                        unknwon_id_roll++;
+                    });
+                    $("#unknown-display").append("<div id=\"unknown-loadmore\" class=\"2u 3u(medium) 4u(small) 6u(xsmall)\"><a href=\"javascript:clickloadUnknown();\">เพิ่มเติม...</a></div>");
+                });                
             }
             var clickloadUnknown = function(){
                 $("#unknown-loadmore").html("<i class=\"fa fa-circle-o-notch fa-spin\"></i>");
