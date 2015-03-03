@@ -94,7 +94,8 @@
                 $.get("https://mumu.irin.in.th/unknown",function(r){
                     $("#unknown-loadmore").remove();
                     console.log(r.length);
-                    if(isUnknownloaded==false&&r.length==12){
+                    if(isUnknownloaded==false){
+                        console.log("System pop");
                         isUnknownloaded = true;
                         r.pop();
                     }
