@@ -41,6 +41,7 @@
                         });
                         sessionStorage.token = response.authResponse.accessToken;
                         loadHistory();
+                        loadUnknown();
 					}
 				});
 			};
@@ -60,6 +61,8 @@
                                 $("#content-display").show();
                             });
                             sessionStorage.token = response.authResponse.accessToken;
+                            loadHistory();
+                            loadUnknown();
 						}
 					});
 				}, {scope: ''});
