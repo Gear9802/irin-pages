@@ -101,7 +101,7 @@
                         r.pop();
                     }
                     r.forEach(function(q){
-                        $("#unknown-display").append("<div id=\"UNKNOWN_"+(unknwon_id_roll)+"\" class=\"2u 3u(medium) 4u(small) 6u(xsmall)\"><a href=\"javascript:objUnknown(\""+q.INPUT+"\","+(unknwon_id_roll)+");\" style=\"color:white;\">"+q.INPUT+"</a></div>");
+                        $("#unknown-display").append("<div id=\"UNKNOWN_"+(unknwon_id_roll)+"\" class=\"2u 3u(medium) 4u(small) 6u(xsmall)\"><a href=\"javascript:clickUnknown('"+q.INPUT+"','"+(unknwon_id_roll)+"');\" style=\"color:white;\">"+q.INPUT+"</a></div>");
                         unknwon_id_roll++;
                     });
                     $("#unknown-display").append("<div id=\"unknown-loadmore\" class=\"2u 3u(medium) 4u(small) 6u(xsmall)\"><a href=\"javascript:clickloadUnknown();\">เพิ่มเติม...</a></div>");
