@@ -109,7 +109,7 @@
             }
             var clickUnknown = function(msg,id){
 
-                $.get("https://mumu.irin.in.th/unknown?limit=12",function(r){
+                $.get("https://mumu.irin.in.th/unknown?limit=1",function(r){
                     $("#UNKNOWN_"+id).remove();
                     $("#unknown-loadmore").remove();
                     r.forEach(function(q){
