@@ -109,7 +109,8 @@
             }
             var clickUnknown = function(msg,id){
                 $("#txt_input").val(msg);
-                $("#content-display").scrollTop(0);
+                $('html,body').animate({scrollTop: $("#"+id).offset().top-69},'fast');
+                //$(window).scrollTop($("#content-display").offset().top-60);
                 $.get("https://mumu.irin.in.th/unknown?limit=1",function(r){
                     $("#UNKNOWN_"+id).remove();
                     $("#unknown-loadmore").remove();
