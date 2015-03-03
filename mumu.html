@@ -91,7 +91,7 @@
                 loadHistory();
             }
             var isUnknownloaded = false;
-            var loadUnknown(){
+            var loadUnknown = function(){
                 $.get("https://mumu.irin.in.th/unknown",function(r){
                     $("#unknown-loadmore").remove();
                     if(!isUnknownloaded){
