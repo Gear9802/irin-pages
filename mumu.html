@@ -108,8 +108,8 @@
                 });
             }
             var clickUnknown = function(msg,id){
-                $("txt_input").val(msg);
-                $(window).scrollTop(0);
+                $("#txt_input").val(msg);
+                $("#content-display").scrollTop(0);
                 $.get("https://mumu.irin.in.th/unknown?limit=1",function(r){
                     $("#UNKNOWN_"+id).remove();
                     $("#unknown-loadmore").remove();
