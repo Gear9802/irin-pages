@@ -87,6 +87,22 @@
                 $("#history-display").append("<tr id=\"history-spinner\"><td colspan=\"3\"><center><i class=\"fa fa-circle-o-notch fa-spin\"></i></center></td></tr>");
                 loadHistory();
             }
+            var isUnknownloaded = false;
+            var loadUnknown(){
+                $.get("https://mumu.irin.in.th/unknown",function(r){
+                    $("#unknown-loadmore").remove();
+                    if(!isUnknownloaded){
+                        isUnknownloaded = true;
+                        r.pop();
+                    }
+                    r.forEach(function(q){
+                        $("#unknown-display").append("<div id=\"INPUT_"+q.INPUT+"\" class=\"2u 3u(medium) 4u(small) 6u(xsmall)\"><a href=\"\" style=\"color:white;\">"+q.INPUT+"</a></div>");
+                    });
+                    $("#unknown-display").append("<div id=\"INPUT_"+q.INPUT+"\" class=\"2u 3u(medium) 4u(small) 6u(xsmall)\"><a href=\"javascript:clickloadUnknown();\">เพิ่มเติม...</a></div>";
+                });
+            }
+            var clickloadUnknown = function(){
+            }
             var zerogap = function(v){
                 return (v<10)?"0"+v:v;
             }
@@ -189,69 +205,9 @@
                                     <h3>ศัพท์ที่มูมู่ไม่รู้จัก</h3>
                                 </center>
                                 <center>
-                                <div class="row">
-                                    <div class="2u 3u(medium) 4u(small) 6u(xsmall)">
-                                        <a href="" style="color:white;">
-                                            ศัพท์ที่ไม่รู้จัก
-                                        </a>
+                                    <div id="unknown-display" class="row">
                                     </div>
-                                    <div class="2u 3u(medium) 4u(small) 6u(xsmall)">
-                                        <a href="" style="color:white;">
-                                            ศัพท์ที่ไม่รู้จัก
-                                        </a>
-                                    </div>
-                                    <div class="2u 3u(medium) 4u(small) 6u(xsmall)">
-                                        <a href="" style="color:white;">
-                                            ศัพท์ที่ไม่รู้จัก
-                                        </a>
-                                    </div>
-                                    <div class="2u 3u(medium) 4u(small) 6u(xsmall)">
-                                        <a href="" style="color:white;">
-                                            ศัพท์ที่ไม่รู้จัก
-                                        </a>
-                                    </div>
-                                    <div class="2u 3u(medium) 4u(small) 6u(xsmall)">
-                                        <a href="" style="color:white;">
-                                            ศัพท์ที่ไม่รู้จัก
-                                        </a>
-                                    </div>
-                                    <div class="2u 3u(medium) 4u(small) 6u(xsmall)">
-                                        <a href="" style="color:white;">
-                                            ศัพท์ที่ไม่รู้จัก
-                                        </a>
-                                    </div>
-                                    <div class="2u 3u(medium) 4u(small) 6u(xsmall)">
-                                        <a href="" style="color:white;">
-                                            ศัพท์ที่ไม่รู้จัก
-                                        </a>
-                                    </div>
-                                    <div class="2u 3u(medium) 4u(small) 6u(xsmall)">
-                                        <a href="" style="color:white;">
-                                            ศัพท์ที่ไม่รู้จัก
-                                        </a>
-                                    </div>
-                                    <div class="2u 3u(medium) 4u(small) 6u(xsmall)">
-                                        <a href="" style="color:white;">
-                                            ศัพท์ที่ไม่รู้จัก
-                                        </a>
-                                    </div>
-                                    <div class="2u 3u(medium) 4u(small) 6u(xsmall)">
-                                        <a href="" style="color:white;">
-                                            ศัพท์ที่ไม่รู้จัก
-                                        </a>
-                                    </div>
-                                    <div class="2u 3u(medium) 4u(small) 6u(xsmall)">
-                                        <a href="" style="color:white;">
-                                            ศัพท์ที่ไม่รู้จัก
-                                        </a>
-                                    </div>
-                                    <div class="2u 3u(medium) 4u(small) 6u(xsmall)">
-                                        <a href="" style="color:white;">
-                                            ศัพท์ที่ไม่รู้จัก
-                                        </a>
-                                    </div>
-                                    </center>
-                                </div>
+                                </center>
                             </section>
                             <hr/>
                             <section>
