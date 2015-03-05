@@ -80,7 +80,7 @@
                     }
                     r.forEach(function(q){
                         var add_date = new Date(q.ADD_DATE);
-                        $("#history-display").append("<tr id='HISTORY_"+addslashes(q.INPUT)+"_"+addslashes(q.REPLY)+"'><td>"+q.INPUT+"</td><td><a id='REPLY_"+addslashes(q.INPUT)+"_"+addslashes(q.REPLY)+"' style='color:white;' href='javascript:historyEdit("+addslashes(q.INPUT)+","+addslashes(q.REPLY)+")'>"+q.REPLY+"</a></td><td>"+zerogap(add_date.getDate())+"/"+zerogap(add_date.getMonth())+"/"+(add_date.getFullYear()+543)+" "+zerogap(add_date.getHours())+":"+zerogap(add_date.getMinutes())+"</td></tr>");
+                        $("#history-display").append("<tr id='HISTORY_"+addslashes(q.INPUT)+"_"+addslashes(q.REPLY)+"'><td>"+q.INPUT+"</td><td><a id='REPLY_"+addslashes(q.INPUT)+"_"+addslashes(q.REPLY)+"' style='color:white;' href=\"javascript:historyEdit('"+addslashes(q.INPUT)+"','"+addslashes(q.REPLY)+"')\">"+q.REPLY+"</a></td><td>"+zerogap(add_date.getDate())+"/"+zerogap(add_date.getMonth())+"/"+(add_date.getFullYear()+543)+" "+zerogap(add_date.getHours())+":"+zerogap(add_date.getMinutes())+"</td></tr>");
                     });
                     $("#history-spinner").remove();
                 });
