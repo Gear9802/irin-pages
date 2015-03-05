@@ -42,7 +42,6 @@
                         sessionStorage.token = response.authResponse.accessToken;
                         loadHistory();
                         loadUnknown();
-                        initHistoryEdit();
 					}
 				});
 			};
@@ -64,7 +63,6 @@
                             sessionStorage.token = response.authResponse.accessToken;
                             loadHistory();
                             loadUnknown();
-                            initHistoryEdit();
 						}
 					});
 				}, {scope: ''});
@@ -82,16 +80,9 @@
                     }
                     r.forEach(function(q){
                         var add_date = new Date(q.ADD_DATE);
-                        $("#history-display").append("<tr id='HISTORY_"+q.INPUT+"_"+q.REPLY+"'><td>"+q.INPUT+"</td><td class='history_reply'><a style='color:white;' href='#'>"+q.REPLY+"</a></td><td>"+zerogap(add_date.getDate())+"/"+zerogap(add_date.getMonth())+"/"+(add_date.getFullYear()+543)+" "+zerogap(add_date.getHours())+":"+zerogap(add_date.getMinutes())+"</td></tr>");
+                        $("#history-display").append("<tr id='HISTORY_"+q.INPUT+"_"+q.REPLY+"'><td>"+q.INPUT+"</td><td><a id='REPLY_"+q.INPUT+"_"+q.REPLY+"' style='color:white;' href='javascript:historyEdit('"+addslashes(q.INPUT)+"','"+addslashes(q.REPLY)+"')'>"+q.REPLY+"</a></td><td>"+zerogap(add_date.getDate())+"/"+zerogap(add_date.getMonth())+"/"+(add_date.getFullYear()+543)+" "+zerogap(add_date.getHours())+":"+zerogap(add_date.getMinutes())+"</td></tr>");
                     });
                     $("#history-spinner").remove();
-                });
-            }
-            function initHistoryEdit(){
-                $("td.history_reply a").click(function(r){
-                    console.log("click!!!");
-                    var inhtml = this.html();
-                    this.replaceWith("<input type='txt' value='"+inhtml+"'/>");
                 });
             }
             var clickloadHistory = function(){
@@ -103,7 +94,6 @@
             var loadUnknown = function(){
                 $.get("https://mumu.irin.in.th/unknown?limit=12",function(r){
                     $("#unknown-loadmore").remove();
-                    console.log(r.length);
                     if(isUnknownloaded==false){
                         console.log("System pop");
                         isUnknownloaded = true;
