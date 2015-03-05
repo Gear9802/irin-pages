@@ -69,6 +69,7 @@
 			}
             var history_shift = 0;
             var history_page = 0;
+            var history_id_roll = 0;
             var loadHistory = function(){
                 history_page++;
                 $.get("https://mumu.irin.in.th/history?access_token="+sessionStorage.token+"&limit="+(((history_page-1)*10)+history_shift)+",10",function(r){
@@ -80,9 +81,26 @@
                     }
                     r.forEach(function(q){
                         var add_date = new Date(q.ADD_DATE);
-                        $("#history-display").append("<tr><td>"+q.INPUT+"</td><td>"+q.REPLY+"</td><td>"+zerogap(add_date.getDate())+"/"+zerogap(add_date.getMonth())+"/"+(add_date.getFullYear()+543)+" "+zerogap(add_date.getHours())+":"+zerogap(add_date.getMinutes())+"</td></tr>");
+                        $("#history-display").append("<tr id='HISTORY_"+addslashes(q.INPUT)+"_"+addslashes(q.REPLY)+"'><td>"+q.INPUT+"</td><td><a id='REPLY_"+(history_id_roll)+"' style='color:white;' href=\"javascript:historyEdit('"+addslashes(q.INPUT)+"','"+addslashes(q.REPLY)+"','"+history_id_roll+"')\">"+q.REPLY+"</a></td><td>"+zerogap(add_date.getDate())+"/"+zerogap(add_date.getMonth())+"/"+(add_date.getFullYear()+543)+" "+zerogap(add_date.getHours())+":"+zerogap(add_date.getMinutes())+"</td></tr>");
+                        history_id_roll++;
                     });
                     $("#history-spinner").remove();
+                });
+            }
+            var historyEdit = function(input,reply,id_roll){
+                $("#REPLY_"+id_roll).replaceWith("<input type='text' id='REPLYBOX_"+id_roll+"' value='"+reply+"'/>");
+                $("#REPLYBOX_"+id_roll).focus();
+                $("#REPLYBOX_"+id_roll).focusout(function(){
+                    var txt = $(this).val();
+                    if(reply!=txt){
+                        $.post("https://mumu.irin.in.th/edit",{input:input,reply:txt,old:reply,access_token:sessionStorage.token},function(){
+                            $('#editwordcomplete').stop().fadeIn(400).delay(3000).fadeOut(400);
+                        }).error(function(errr){
+                            console.log(err);
+                            alert("เซิฟเวอร์ขัดข้อง โปรดแจ้งปัญหาที่ที่เพจ pure's app");
+                        });
+                    }
+                    $(this).replaceWith("<a id='REPLY_"+(id_roll)+"' style='color:white;' href=\"javascript:historyEdit('"+addslashes(input)+"','"+addslashes(txt)+"','"+id_roll+"')\">"+txt+"</a>");
                 });
             }
             var clickloadHistory = function(){
@@ -94,14 +112,13 @@
             var loadUnknown = function(){
                 $.get("https://mumu.irin.in.th/unknown?limit=12",function(r){
                     $("#unknown-loadmore").remove();
-                    console.log(r.length);
                     if(isUnknownloaded==false){
                         console.log("System pop");
                         isUnknownloaded = true;
                         r.pop();
                     }
                     r.forEach(function(q){
-                        $("#unknown-display").append("<div id=\"UNKNOWN_"+(unknwon_id_roll)+"\" class=\"2u 3u(medium) 4u(small) 6u(xsmall)\"><a href=\"javascript:clickUnknown('"+q.INPUT+"','"+(unknwon_id_roll)+"');\" style=\"color:white;\">"+q.INPUT+"</a></div>");
+                        $("#unknown-display").append("<div id=\"UNKNOWN_"+(unknwon_id_roll)+"\" class=\"2u 3u(medium) 4u(small) 6u(xsmall)\"><a href=\"javascript:clickUnknown('"+addslashes(q.INPUT)+"','"+(unknwon_id_roll)+"');\" style=\"color:white;\">"+q.INPUT+"</a></div>");
                         unknwon_id_roll++;
                     });
                     $("#unknown-display").append("<div id=\"unknown-loadmore\" class=\"2u 3u(medium) 4u(small) 6u(xsmall)\"><a href=\"javascript:clickloadUnknown();\">เพิ่มเติม...</a></div>");
@@ -110,7 +127,6 @@
             var clickUnknown = function(msg,id){
                 $("#txt_input").val(msg);
                 $('html,body').animate({scrollTop: $("#content-display").offset().top-70},'fast');
-                //$(window).scrollTop($("#content-display").offset().top-60);
                 $.get("https://mumu.irin.in.th/unknown?limit=1",function(r){
                     $("#UNKNOWN_"+id).remove();
                     $("#unknown-loadmore").remove();
@@ -139,7 +155,8 @@
                     if($("#history-nothing").length){
                         $("#history-nothing").remove();
                     }
-                    $("#history-display").prepend("<tr><td>"+cin+"</td><td>"+cout+"</td><td>"+zerogap(add_date.getDate())+"/"+zerogap(add_date.getMonth())+"/"+(add_date.getFullYear()+543)+" "+zerogap(add_date.getHours())+":"+zerogap(add_date.getMinutes())+"</td></tr>");
+                    $("#history-display").prepend("<tr><td>"+cin+"</td><td><a id='REPLY_"+(history_id_roll)+"' style='color:white;' href=\"javascript:historyEdit('"+addslashes(cin)+"','"+addslashes(cout)+"','"+history_id_roll+"')\">"+cout+"</a></td><td>"+zerogap(add_date.getDate())+"/"+zerogap(add_date.getMonth())+"/"+(add_date.getFullYear()+543)+" "+zerogap(add_date.getHours())+":"+zerogap(add_date.getMinutes())+"</td></tr>");
+                    history_id_roll++;
                     history_shift++;
                     $('#addwordcomplete').stop().fadeIn(400).delay(3000).fadeOut(400);
 
@@ -147,6 +164,9 @@
                     alert("เซิฟเวอร์ขัดข้อง แจ้งเราทราบทางแฟนเพจ pure's app");
                     console.log(e);
                 });
+            }
+            function addslashes( str ) {
+                return (str + '').replace(/[\\"']/g, '\\$&').replace(/\u0000/g, '\\0');
             }
 		</script>
         <style>
@@ -267,6 +287,7 @@
 			</div>
             <!-- Hidden Item zone -->
                     <div id='addwordcomplete' class="toast" style='display:none'>เพิ่มคำศัพท์ใหม่เรียบร้อยแล้ว</div>
+                    <div id='editwordcomplete' class="toast" style='display:none'>แก้ไขคำศัพท์เรียบร้อยแล้ว</div>
 			<!-- Footer -->
 				<footer id="footer">
 					<ul class="icons">
