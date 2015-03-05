@@ -69,6 +69,7 @@
 			}
             var history_shift = 0;
             var history_page = 0;
+            var history_id_roll = 0;
             var loadHistory = function(){
                 history_page++;
                 $.get("https://mumu.irin.in.th/history?access_token="+sessionStorage.token+"&limit="+(((history_page-1)*10)+history_shift)+",10",function(r){
@@ -80,13 +81,14 @@
                     }
                     r.forEach(function(q){
                         var add_date = new Date(q.ADD_DATE);
-                        $("#history-display").append("<tr id='HISTORY_"+addslashes(q.INPUT)+"_"+addslashes(q.REPLY)+"'><td>"+q.INPUT+"</td><td><a id='REPLY_"+addslashes(q.INPUT)+"_"+addslashes(q.REPLY)+"' style='color:white;' href=\"javascript:historyEdit('"+addslashes(q.INPUT)+"','"+addslashes(q.REPLY)+"')\">"+q.REPLY+"</a></td><td>"+zerogap(add_date.getDate())+"/"+zerogap(add_date.getMonth())+"/"+(add_date.getFullYear()+543)+" "+zerogap(add_date.getHours())+":"+zerogap(add_date.getMinutes())+"</td></tr>");
+                        $("#history-display").append("<tr id='HISTORY_"+addslashes(q.INPUT)+"_"+addslashes(q.REPLY)+"'><td>"+q.INPUT+"</td><td><a id='REPLY_"+(history_id_roll)+"' style='color:white;' href=\"javascript:historyEdit('"+addslashes(q.INPUT)+"','"+addslashes(q.REPLY)+"','"+history_id_roll+"')\">"+q.REPLY+"</a></td><td>"+zerogap(add_date.getDate())+"/"+zerogap(add_date.getMonth())+"/"+(add_date.getFullYear()+543)+" "+zerogap(add_date.getHours())+":"+zerogap(add_date.getMinutes())+"</td></tr>");
+                        history_id_roll++;
                     });
                     $("#history-spinner").remove();
                 });
             }
-            var historyEdit = function(input,reply){
-                $("#REPLY_"+input+"_"+reply).replaceWith("<input type='text' id='#REPLYBOX_"+input+"_"+reply+"' value='"+reply+"'/>");
+            var historyEdit = function(input,reply,history_id_roll){
+                $("#REPLY_"+history_id_roll).replaceWith("<input type='text' id='#REPLYBOX_"+input+"_"+reply+"' value='"+reply+"'/>");
             }
             var clickloadHistory = function(){
                 $("#history-display").append("<tr id=\"history-spinner\"><td colspan=\"3\"><center><i class=\"fa fa-circle-o-notch fa-spin\"></i></center></td></tr>");
@@ -141,7 +143,8 @@
                     if($("#history-nothing").length){
                         $("#history-nothing").remove();
                     }
-                    $("#history-display").prepend("<tr><td>"+cin+"</td><td>"+cout+"</td><td>"+zerogap(add_date.getDate())+"/"+zerogap(add_date.getMonth())+"/"+(add_date.getFullYear()+543)+" "+zerogap(add_date.getHours())+":"+zerogap(add_date.getMinutes())+"</td></tr>");
+                    $("#history-display").prepend("<tr><td>"+cin+"</td><td id='HISTORY_"+history_id_roll+"'>"+cout+"</td><td>"+zerogap(add_date.getDate())+"/"+zerogap(add_date.getMonth())+"/"+(add_date.getFullYear()+543)+" "+zerogap(add_date.getHours())+":"+zerogap(add_date.getMinutes())+"</td></tr>");
+                    history_id_roll++;
                     history_shift++;
                     $('#addwordcomplete').stop().fadeIn(400).delay(3000).fadeOut(400);
 
