@@ -88,7 +88,7 @@
                 });
             }
             var historyEdit = function(input,reply,id_roll){
-                $("#REPLY_"+history_id_roll).replaceWith("<input type='text' id='#REPLYBOX_"+id_roll+' value='"+reply+"'/>");
+                $("#REPLY_"+history_id_roll).replaceWith("<input type='text' id='#REPLYBOX_'"+id_roll+"' value='"+reply+"'/>");
                 $("#REPLYBOX_"+id_roll).focusout(fucntion(){
                     var txt = $(this).val();
                     $(this).replaceWith("<a id='REPLY_"+(id_roll)+"' style='color:white;' href=\"javascript:historyEdit('"+addslashes(input)+"','"+addslashes(txt)+"','"+id_roll+"')\">"+txt+"</a>");
