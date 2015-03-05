@@ -126,7 +126,7 @@
             }
             var clickUnknown = function(msg,id){
                 $("#txt_input").val(msg);
-                $("txt_reply").focus();
+                $("#txt_reply").focus();
                 $('html,body').animate({scrollTop: $("#content-display").offset().top-70},'fast');
                 $.get("https://mumu.irin.in.th/unknown?limit=1",function(r){
                     $("#UNKNOWN_"+id).remove();
