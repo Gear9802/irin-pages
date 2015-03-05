@@ -88,9 +88,13 @@
                 });
             }
             var historyEdit = function(input,reply,id_roll){
-                $("#REPLY_"+id_roll).replaceWith("<input type='text' id='REPLYBOX_"+id_roll+"' value='"+addslashes(reply)+"'/>");
+                $("#REPLY_"+id_roll).replaceWith("<input type='text' id='REPLYBOX_"+id_roll+"' style='background-color:#2D2E36' value='"+reply+"'/>");
+                $("#REPLYBOX_"+id_roll).focus();
                 $("#REPLYBOX_"+id_roll).focusout(function(){
                     var txt = $(this).val();
+                    $.post("https://mumu.irin.in.th/edit",{input:input,reply:txt,old:reply},function(){
+                    
+                    });
                     $(this).replaceWith("<a id='REPLY_"+(id_roll)+"' style='color:white;' href=\"javascript:historyEdit('"+addslashes(input)+"','"+addslashes(txt)+"','"+id_roll+"')\">"+txt+"</a>");
                 });
             }
