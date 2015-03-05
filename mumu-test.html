@@ -92,10 +92,12 @@
                 $("#REPLYBOX_"+id_roll).focus();
                 $("#REPLYBOX_"+id_roll).focusout(function(){
                     var txt = $(this).val();
-                    console.log(input)
-                    /*$.post("https://mumu.irin.in.th/edit",{input:input,reply:txt,old:reply},function(){
+                    $.post("https://mumu.irin.in.th/edit",{input:input,reply:txt,old:reply,access_token:sessionStorage.token},function(){
                     
-                    });*/
+                    }).error(function(errr){
+                        console.log(err);
+                        alert("เซิฟเวอร์ขัดข้อง โปรดแจ้งปัญหาที่ที่เพจ pure's app");
+                    });
                     $(this).replaceWith("<a id='REPLY_"+(id_roll)+"' style='color:white;' href=\"javascript:historyEdit('"+addslashes(input)+"','"+addslashes(txt)+"','"+id_roll+"')\">"+txt+"</a>");
                 });
             }
