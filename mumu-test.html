@@ -80,7 +80,7 @@
                     }
                     r.forEach(function(q){
                         var add_date = new Date(q.ADD_DATE);
-                        $("#history-display").append("<tr id='HISTORY_"+addslashes(q.INPUT)+"_"+addslashes(q.REPLY)+"'><td>"+q.INPUT+"</td><td><a id='REPLY_"+addslashes(q.INPUT)+"_"+addslashes(q.REPLY)+"' style='color:white;' href='javascript:historyEdit(\""+addslashes(q.INPUT)+"\",\""+addslashes(q.REPLY)+"\")'>"+q.REPLY+"</a></td><td>"+zerogap(add_date.getDate())+"/"+zerogap(add_date.getMonth())+"/"+(add_date.getFullYear()+543)+" "+zerogap(add_date.getHours())+":"+zerogap(add_date.getMinutes())+"</td></tr>");
+                        $("#history-display").append("<tr id='HISTORY_"+encodeURIComponent(q.INPUT)+"_"+encodeURIComponent(q.REPLY)+"'><td>"+q.INPUT+"</td><td><a id='REPLY_"+encodeURIComponent(q.INPUT)+"_"+encodeURIComponent(q.REPLY)+"' style='color:white;' href='javascript:historyEdit(\""+encodeURIComponent(q.INPUT)+"\",\""+encodeURIComponent(q.REPLY)+"\")'>"+q.REPLY+"</a></td><td>"+zerogap(add_date.getDate())+"/"+zerogap(add_date.getMonth())+"/"+(add_date.getFullYear()+543)+" "+zerogap(add_date.getHours())+":"+zerogap(add_date.getMinutes())+"</td></tr>");
                     });
                     $("#history-spinner").remove();
                 });
@@ -103,14 +103,14 @@
                         r.pop();
                     }
                     r.forEach(function(q){
-                        $("#unknown-display").append("<div id=\"UNKNOWN_"+(unknwon_id_roll)+"\" class=\"2u 3u(medium) 4u(small) 6u(xsmall)\"><a href=\"javascript:clickUnknown('"+addslashes(q.INPUT)+"','"+(unknwon_id_roll)+"');\" style=\"color:white;\">"+q.INPUT+"</a></div>");
+                        $("#unknown-display").append("<div id=\"UNKNOWN_"+(unknwon_id_roll)+"\" class=\"2u 3u(medium) 4u(small) 6u(xsmall)\"><a href=\"javascript:clickUnknown('"+encodeURIComponent(q.INPUT)+"','"+(unknwon_id_roll)+"');\" style=\"color:white;\">"+q.INPUT+"</a></div>");
                         unknwon_id_roll++;
                     });
                     $("#unknown-display").append("<div id=\"unknown-loadmore\" class=\"2u 3u(medium) 4u(small) 6u(xsmall)\"><a href=\"javascript:clickloadUnknown();\">เพิ่มเติม...</a></div>");
                 });
             }
             var clickUnknown = function(msg,id){
-                $("#txt_input").val(msg);
+                $("#txt_input").val(decodeURIComponent(msg));
                 $('html,body').animate({scrollTop: $("#content-display").offset().top-70},'fast');
                 //$(window).scrollTop($("#content-display").offset().top-60);
                 $.get("https://mumu.irin.in.th/unknown?limit=1",function(r){
@@ -149,9 +149,6 @@
                     alert("เซิฟเวอร์ขัดข้อง แจ้งเราทราบทางแฟนเพจ pure's app");
                     console.log(e);
                 });
-            }
-            function addslashes( str ) {
-                return (str + '').replace(/[\\"']/g, '\\$&').replace(/\u0000/g, '\\0');
             }
 		</script>
         <style>
