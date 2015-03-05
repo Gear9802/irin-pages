@@ -92,13 +92,14 @@
                 $("#REPLYBOX_"+id_roll).focus();
                 $("#REPLYBOX_"+id_roll).focusout(function(){
                     var txt = $(this).val();
-                    if()
-                    $.post("https://mumu.irin.in.th/edit",{input:input,reply:txt,old:reply,access_token:sessionStorage.token},function(){
-                        $('#editwordcomplete').stop().fadeIn(400).delay(3000).fadeOut(400);
-                    }).error(function(errr){
-                        console.log(err);
-                        alert("เซิฟเวอร์ขัดข้อง โปรดแจ้งปัญหาที่ที่เพจ pure's app");
-                    });
+                    if(reply!=txt){
+                        $.post("https://mumu.irin.in.th/edit",{input:input,reply:txt,old:reply,access_token:sessionStorage.token},function(){
+                            $('#editwordcomplete').stop().fadeIn(400).delay(3000).fadeOut(400);
+                        }).error(function(errr){
+                            console.log(err);
+                            alert("เซิฟเวอร์ขัดข้อง โปรดแจ้งปัญหาที่ที่เพจ pure's app");
+                        });
+                    }
                     $(this).replaceWith("<a id='REPLY_"+(id_roll)+"' style='color:white;' href=\"javascript:historyEdit('"+addslashes(input)+"','"+addslashes(txt)+"','"+id_roll+"')\">"+txt+"</a>");
                 });
             }
