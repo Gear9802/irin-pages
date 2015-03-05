@@ -85,6 +85,9 @@
                     $("#history-spinner").remove();
                 });
             }
+            var historyEdit = function(input,reply){
+                $("#REPLY_"+input+"_"+reply).replaceWith("<input type='text' id='#REPLYBOX_"+input+"_"+reply+"' value='"+reply+"'/>");
+            }
             var clickloadHistory = function(){
                 $("#history-display").append("<tr id=\"history-spinner\"><td colspan=\"3\"><center><i class=\"fa fa-circle-o-notch fa-spin\"></i></center></td></tr>");
                 loadHistory();
