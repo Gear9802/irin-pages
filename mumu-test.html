@@ -80,7 +80,7 @@
                     }
                     r.forEach(function(q){
                         var add_date = new Date(q.ADD_DATE);
-                        $("#history-display").append("<tr><td>"+q.INPUT+"</td><td><a id='' style='color:white;' href='javascript:historyEdit(\""+convertCharStr2jEsc(q.INPUT)+"\",\""+convertCharStr2jEsc(q.REPLY)+"\")'>"+q.REPLY+"</a></td><td>"+zerogap(add_date.getDate())+"/"+zerogap(add_date.getMonth())+"/"+(add_date.getFullYear()+543)+" "+zerogap(add_date.getHours())+":"+zerogap(add_date.getMinutes())+"</td></tr>");
+                        $("#history-display").append("<tr id='HISTORY_"+q.INPUT+"_"+q.REPLY+"'><td>"+q.INPUT+"</td><td><a id='REPLY_"+q.INPUT+"_"+q.REPLY+"' style='color:white;' href='javascript:historyEdit('"+addslashes(q.INPUT)+"','"+addslashes(q.REPLY)+"')'>"+q.REPLY+"</a></td><td>"+zerogap(add_date.getDate())+"/"+zerogap(add_date.getMonth())+"/"+(add_date.getFullYear()+543)+" "+zerogap(add_date.getHours())+":"+zerogap(add_date.getMinutes())+"</td></tr>");
                     });
                     $("#history-spinner").remove();
                 });
@@ -103,14 +103,14 @@
                         r.pop();
                     }
                     r.forEach(function(q){
-                        $("#unknown-display").append("<div id=\"UNKNOWN_"+(unknwon_id_roll)+"\" class=\"2u 3u(medium) 4u(small) 6u(xsmall)\"><a href=\"javascript:clickUnknown('"+q.INPUT+"','"+(unknwon_id_roll)+"');\" style=\"color:white;\">"+q.INPUT+"</a></div>");
+                        $("#unknown-display").append("<div id=\"UNKNOWN_"+(unknwon_id_roll)+"\" class=\"2u 3u(medium) 4u(small) 6u(xsmall)\"><a href=\"javascript:clickUnknown('"+addslashes(q.INPUT)+"','"+(unknwon_id_roll)+"');\" style=\"color:white;\">"+q.INPUT+"</a></div>");
                         unknwon_id_roll++;
                     });
                     $("#unknown-display").append("<div id=\"unknown-loadmore\" class=\"2u 3u(medium) 4u(small) 6u(xsmall)\"><a href=\"javascript:clickloadUnknown();\">เพิ่มเติม...</a></div>");
                 });
             }
             var clickUnknown = function(msg,id){
-                $("#txt_input").val(decodeURIComponent(msg));
+                $("#txt_input").val(msg);
                 $('html,body').animate({scrollTop: $("#content-display").offset().top-70},'fast');
                 //$(window).scrollTop($("#content-display").offset().top-60);
                 $.get("https://mumu.irin.in.th/unknown?limit=1",function(r){
@@ -150,66 +150,8 @@
                     console.log(e);
                 });
             }
-            function convertCharStr2jEsc ( str, cstyle ) { 
-            // Converts a string of characters to JavaScript escapes
-            // str: sequence of Unicode characters
-            var highsurrogate = 0;
-            var suppCP;
-            var pad;
-            var n = 0;
-            var outputString = '';
-            for (var i = 0; i < str.length; i++) {
-                var cc = str.charCodeAt(i); 
-                if (cc < 0 || cc > 0xFFFF) {
-                    outputString += '!Error in convertCharStr2UTF16: unexpected charCodeAt result, cc=' + cc + '!';
-                    }
-                if (highsurrogate != 0) { // this is a supp char, and cc contains the low surrogate
-                    if (0xDC00 <= cc && cc <= 0xDFFF) {
-                        suppCP = 0x10000 + ((highsurrogate - 0xD800) << 10) + (cc - 0xDC00); 
-                        if (cstyle) {
-                            pad = suppCP.toString(16);
-                            while (pad.length < 8) { pad = '0'+pad; }
-                            outputString += '\\U'+pad; 
-                            }
-                        else {
-                            suppCP -= 0x10000; 
-                            outputString += '\\u'+ dec2hex4(0xD800 | (suppCP >> 10)) +'\\u'+ dec2hex4(0xDC00 | (suppCP & 0x3FF));
-                            }
-                        highsurrogate = 0;
-                        continue;
-                        }
-                    else {
-                        outputString += 'Error in convertCharStr2UTF16: low surrogate expected, cc=' + cc + '!';
-                        highsurrogate = 0;
-                        }
-                    }
-                if (0xD800 <= cc && cc <= 0xDBFF) { // start of supplementary character
-                    highsurrogate = cc;
-                    }
-                else { // this is a BMP character
-                    //outputString += dec2hex(cc) + ' ';
-                    switch (cc) {
-                        case 0: outputString += '\\0'; break;
-                        case 8: outputString += '\\b'; break;
-                        case 9: outputString += '\\t'; break;
-                        case 10: outputString += '\\n'; break;
-                        case 13: outputString += '\\r'; break;
-                        case 11: outputString += '\\v'; break;
-                        case 12: outputString += '\\f'; break;
-                        case 34: outputString += '\\\"'; break;
-                        case 39: outputString += '\\\''; break;
-                        case 92: outputString += '\\\\'; break;
-                        default: 
-                            if (cc > 0x1f && cc < 0x7F) { outputString += String.fromCharCode(cc); }
-                            else { 
-                                pad = cc.toString(16).toUpperCase();
-                                while (pad.length < 4) { pad = '0'+pad; }
-                                outputString += '\\u'+pad; 
-                                }
-                        }
-                    }
-                }
-            return outputString;
+            function addslashes( str ) {
+                return (str + '').replace(/[\\"']/g, '\\$&').replace(/\u0000/g, '\\0');
             }
 		</script>
         <style>
