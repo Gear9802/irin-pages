@@ -87,8 +87,12 @@
                     $("#history-spinner").remove();
                 });
             }
-            var historyEdit = function(input,reply,history_id_roll){
-                $("#REPLY_"+history_id_roll).replaceWith("<input type='text' id='#REPLYBOX_"+input+"_"+reply+"' value='"+reply+"'/>");
+            var historyEdit = function(input,reply,id_roll){
+                $("#REPLY_"+history_id_roll).replaceWith("<input type='text' id='#REPLYBOX_"+id_roll' value='"+reply+"'/>");
+                $("#REPLYBOX_"+id_roll).focusout(fucntion(){
+                    var txt = $(this).val();
+                    $(this).replaceWith("<a id='REPLY_"+(id_roll)+"' style='color:white;' href=\"javascript:historyEdit('"+addslashes(input)+"','"+addslashes(txt)+"','"+id_roll+"')\">"+txt+"</a>");
+                });
             }
             var clickloadHistory = function(){
                 $("#history-display").append("<tr id=\"history-spinner\"><td colspan=\"3\"><center><i class=\"fa fa-circle-o-notch fa-spin\"></i></center></td></tr>");
@@ -114,7 +118,6 @@
             var clickUnknown = function(msg,id){
                 $("#txt_input").val(msg);
                 $('html,body').animate({scrollTop: $("#content-display").offset().top-70},'fast');
-                //$(window).scrollTop($("#content-display").offset().top-60);
                 $.get("https://mumu.irin.in.th/unknown?limit=1",function(r){
                     $("#UNKNOWN_"+id).remove();
                     $("#unknown-loadmore").remove();
